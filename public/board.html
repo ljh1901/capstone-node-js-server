@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세명학식 전광판</title>
+</head>
+
+<body>
+<div class="board">
+    <div class="column">
+        <div class="title">양식/분식</div>
+        <div class="slot" id="bunsik-1"></div>
+        <div class="slot" id="bunsik-2"></div>
+        <div class="slot" id="bunsik-3"></div>
+        <div class="slot" id="bunsik-4"></div>
+        <div class="slot" id="bunsik-5"></div>
+    </div>
+    <div class="divider"></div>
+    <div class="column">
+        <div class="title">라면/김밥</div>
+        <div class="slot" id="ramen-1"></div>
+        <div class="slot" id="ramen-2"></div>
+        <div class="slot" id="ramen-3"></div>
+        <div class="slot" id="ramen-4"></div>
+        <div class="slot" id="ramen-5"></div>
+    </div>
+    <div class="divider"></div>
+    <div class="column">
+        <div class="title">시그니처</div>
+        <div class="slot" id="signiture-1"></div>
+        <div class="slot" id="signiture-2"></div>
+        <div class="slot" id="signiture-3"></div>
+        <div class="slot" id="signiture-4"></div>
+        <div class="slot" id="signiture-5"></div>
+    </div>
+</div>
+
+<!-- 네비게이션 바 -->
+<div class="navbar">
+    <div class="logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png" alt="로고">
+        <a href="http://localhost:9077/smu-cafeteria/main" class="btn btn-profile">세명학식 - 전광판 알림</a>
+    </div>
+</div>
+
+<div class="hero">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/board-client.js"></script>
+    <link rel="stylesheet" href="/board.css">
+</div>
+</body>
+</html>

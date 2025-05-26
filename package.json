@@ -1,0 +1,19 @@
+{
+  "name": "capstone-node-js-server",
+  "version": "1.0.0",
+  "main": "board.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pm2:single": "pm2 start board.js --name capstone-node-js-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "→ 파일 처리, 네트워크 요청 등 서버 기능을 JavaScript로 구현 가능 (REST API, 실시간 통신 등)",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "pm2": "^6.0.6",
+    "socket.io": "^4.8.1"
+  }
+}

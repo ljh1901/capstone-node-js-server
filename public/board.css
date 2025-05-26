@@ -1,0 +1,224 @@
+/* ✅ 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Figtree', 'Noto Sans KR', sans-serif;
+}
+
+body {
+    background-image: url('https://www.semyung.ac.kr/images/kor/sub06/sub06_03_04_02_img01.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.board {
+    display: flex;
+    background: linear-gradient(145deg, #0073e6, #3a8ee6, #0056b3);
+    padding: 40px;
+    border: 5px solid white;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: stretch;
+    width: 80%;
+    min-height: 500px;
+    max-width: 90%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: brightness(1.2);
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    background-color: white;
+    padding: 10px 60px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.slot {
+    width: 250px;
+    height: 90px;
+    background-color: #99c2ff;
+    border-radius: 20px;
+    margin: 8px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+}
+
+.divider {
+    width: 20px;
+    background-color: white;
+    margin: 0 30px;
+    border-radius: 5px;
+    min-height: 100%;
+    height: auto;
+}
+
+
+/* ✅ 네비게이션 바 스타일 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background: linear-gradient(90deg, rgba(0,102,255,0.6), rgba(0,204,255,0.6));
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: 0.4s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+.navbar.scrolled {
+    background: linear-gradient(90deg, rgba(0,102,255,0.9), rgba(0,204,255,0.9));
+}
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+.logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn-profile {
+    cursor: pointer;
+    color: white;
+}
+.btn-login {
+    background-color: white;
+    color: #007BFF;
+    border: 2px solid #007BFF;
+}
+.btn-login:hover {
+    background-color: #007BFF;
+    color: white;
+}
+.btn-signup {
+    background-color: white;
+    color: #007BFF;
+    border: 2px solid #007BFF;
+}
+.btn-signup:hover {
+    background-color: #007BFF;
+    color: white;
+}
+.btn-order {
+    background: linear-gradient(90deg, #ffd700, #ffcc00);
+    color: black;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+}
+.btn-order:hover {
+    background: linear-gradient(90deg, #ffcc00, #e6c200);
+}
+
+/* ✅ 배경 어두운 오버레이 */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+@keyframes blinkText {
+    0%, 100% { color: red; }
+    50%      { color: transparent; }
+}
+
+.highlight {
+    animation: blinkText 0.5s ease-in-out 2; /* 0.5초 동안 2번 깜박임 */
+}
+@media (max-width: 768px) {
+    .board {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 40px 10px;
+        width: 100%;
+        position: static;
+        transform: none;
+        margin-top: 160px;
+        background: linear-gradient(to bottom, #00aaff, #0066ff);
+        border-radius: 6px;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        gap: 10px;
+        margin: 0 5px;
+    }
+
+    .title {
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+
+    .slot {
+        width: 100%;
+        height: 50px;
+        font-size: 16px;
+        margin: 6px 0;
+        border-radius: 6px;
+    }
+
+    .divider {
+        width: 5px;
+        margin: 0 5px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+
+    .logo {
+        font-size: 18px;
+    }
+}
