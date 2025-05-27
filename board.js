@@ -70,7 +70,7 @@ app.post('/remove-ticket', (req, res) => {
 app.get('/board', (req, res) => {
     res.sendFile(__dirname + '/public/board.html');
 });
-// 서버 시작 -> 보안적으로 권창
+// 서버 시작 -> 내부 localhost에서만 4000번 포트를 접근 하도록 보안적으로 권창
 const PORT = 4000;
 const IP = '127.0.0.1';
 
