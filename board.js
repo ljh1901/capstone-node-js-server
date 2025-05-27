@@ -17,15 +17,11 @@ const io = new Server(server, {
         methods: ['GET', 'POST']
     }
 });
-//1. Socket.IO 서버에서 정적 파일 제공 막기: board-server.js 또는 app.js 중 socket.io 서버인데
-    // app.use(express.static('public')); //Static express() 서버에서 static 서빙 금지 시켜야함.
+
 // CORS, JSON 파싱, 정적 파일(public 폴더) 서빙 설정
 app.use(cors());
 app.use(bodyParser.json());
-
-//1. Socket.IO 서버에서 정적 파일 제공 막기: board-server.js 또는 app.js 중 socket.io 서버인데
-    // app.use(express.static('public')); //Static express() 서버에서 static 서빙 금지 시켜야함.
-
+app.use(express.static(__dirname + '/public'));
 
 // 클라이언트 연결 시 로그 출력
 io.on('connection', (socket) => {
@@ -70,6 +66,7 @@ app.post('/remove-ticket', (req, res) => {
 app.get('/board', (req, res) => {
     res.sendFile(__dirname + '/public/board.html');
 });
+
 // 서버 시작 -> 내부 localhost에서만 4000번 포트를 접근 하도록 보안적으로 권창
 const PORT = 4000;
 const IP = '127.0.0.1';
