@@ -6,9 +6,9 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const { Server } = require('socket.io');
 
-const app = express();
+const app = express(); // board.html 전광판 파일 서빙
 const server = http.createServer(app);
-
+const currentTickets = []; // 전광판에 반환된 티켓 저장 - 새로고침 시 불러오기 위함
 
 // Socket.IO 서버 생성 (CORS 설정 포함)
 const io = new Server(server, {
@@ -17,13 +17,15 @@ const io = new Server(server, {
         methods: ['GET', 'POST']
     }
 });
-
+//1. Socket.IO 서버에서 정적 파일 제공 막기: board-server.js 또는 app.js 중 socket.io 서버인데
+    // app.use(express.static('public')); //Static express() 서버에서 static 서빙 금지 시켜야함.
 // CORS, JSON 파싱, 정적 파일(public 폴더) 서빙 설정
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static('public')); // board.html 전광판 파일 서빙
 
-const currentTickets = []; // 전광판에 반환된 티켓 저장 - 새로고침 시 불러오기 위함
+//1. Socket.IO 서버에서 정적 파일 제공 막기: board-server.js 또는 app.js 중 socket.io 서버인데
+    // app.use(express.static('public')); //Static express() 서버에서 static 서빙 금지 시켜야함.
+
 
 // 클라이언트 연결 시 로그 출력
 io.on('connection', (socket) => {
