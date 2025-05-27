@@ -70,10 +70,10 @@ app.post('/remove-ticket', (req, res) => {
 app.get('/board', (req, res) => {
     res.sendFile(__dirname + '/public/board.html');
 });
-// 서버 시작
+// 서버 시작 -> 보안적으로 권창
 const PORT = 4000;
-const IP = '0.0.0.0';
+const IP = '127.0.0.1';
 
 server.listen(PORT, IP, () => {
-    console.log(`전광판 서버 실행 중: http://localhost:${PORT}`);
+    console.log(`전광판 서버 실행 Port: ${PORT}`);
 });
