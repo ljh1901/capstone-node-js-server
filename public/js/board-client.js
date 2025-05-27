@@ -1,6 +1,8 @@
 // public/js/board-client.js
 
 const socket = io('http://localhost:4000');
+// const socket = io('http://your-domain:4000'); //board.js에서 접근하는 socket.io 진입점 -> http://your-domain:4000
+// const socket = io('http://public ip:4000'); //board.js에서 접근하는 socket.io 진입점 -> http://public ip:4000
 const maxSlots = 5;
 const categoryIdMap = {
     '양식/분식': 'bunsik',
